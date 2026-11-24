@@ -1,0 +1,10 @@
+{
+  "name": "virtual-oil-lamp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Virtual Oil Lamp event lighting and transparent OBS display by Dewlabs.",
+  "author": "Sadewmina Prabashwara (Dewlabs)",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

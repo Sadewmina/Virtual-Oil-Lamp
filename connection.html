@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Sadewmina Prabashwara" />
+    <meta name="application-name" content="Virtual Oil Lamp" />
+    <meta name="version" content="1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Connection — Virtual Oil Lamp v1.0 · Dewlabs</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="config-screen admin-page">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Virtual Oil Lamp by Dewlabs, version 1.0"
+        ><span class="brand-mark">✦</span
+        ><span class="brand-lockup"
+          ><strong>VIRTUAL OIL LAMP</strong><small>DEWLABS · v1.0</small></span
+        ></a
+      >
+      <nav>
+        <a href="live.html">Live Control</a><a href="config.html">Configuration</a
+        ><a href="connection.html" class="active">Connection</a><a href="network.html">Network</a
+        ><a href="lighting.html">Lighting</a><a href="display.html">Display</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" type="button">◐ Dark</button
+      ><button class="theme-toggle" id="logout" type="button">Sign out</button
+      ><span class="live-tag"><i></i> LIVE SYNC</span>
+    </header>
+    <main class="page">
+      <div class="page-head">
+        <div>
+          <div class="eyebrow">VIRTUAL OIL LAMP / ADMIN</div>
+          <h1>Connection</h1>
+          <p>Manage accounts, page access, and your administrator password.</p>
+        </div>
+      </div>
+      <div class="config-grid">
+        <section class="panel wide" id="accountPanel">
+          <div class="row">
+            <div>
+              <h2>Accounts &amp; page access</h2>
+              <p class="hint">
+                New accounts wait here until you assign a page. Removing an account ends its access.
+              </p>
+            </div>
+          </div>
+          <div class="account-create">
+            <input id="newAccountName" placeholder="Username" autocomplete="off" /><input
+              id="newAccountPassword"
+              type="password"
+              placeholder="Temporary password (8+ characters)"
+            /><button class="primary" id="createAccount" type="button">Add account</button>
+          </div>
+          <div id="accountList" class="account-list"><p class="hint">Loading accounts…</p></div>
+        </section>
+        <section class="panel wide" id="passwordPanel">
+          <h2>Change password</h2>
+          <div class="account-create password-change">
+            <input id="currentPassword" type="password" placeholder="Current password" /><input
+              id="nextPassword"
+              type="password"
+              placeholder="New password (8+ characters)"
+            /><button class="primary" id="changePassword" type="button">Update password</button>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="site-credit">Created by Sadewmina Prabashwara · Dewlabs</footer>
+    <div class="toast" id="toast"></div>
+    <script src="brand.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

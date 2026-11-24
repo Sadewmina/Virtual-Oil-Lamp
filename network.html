@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Sadewmina Prabashwara" />
+    <meta name="application-name" content="Virtual Oil Lamp" />
+    <meta name="version" content="1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Network — Virtual Oil Lamp v1.0 · Dewlabs</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="config-screen admin-page">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Virtual Oil Lamp by Dewlabs, version 1.0"
+        ><span class="brand-mark">✦</span
+        ><span class="brand-lockup"
+          ><strong>VIRTUAL OIL LAMP</strong><small>DEWLABS · v1.0</small></span
+        ></a
+      >
+      <nav>
+        <a href="live.html">Live Control</a><a href="config.html">Configuration</a
+        ><a href="connection.html">Connection</a><a href="network.html" class="active">Network</a
+        ><a href="lighting.html">Lighting</a><a href="display.html">Display</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" type="button">◐ Dark</button
+      ><button class="theme-toggle" id="logout" type="button">Sign out</button
+      ><span class="live-tag"><i></i> LIVE SYNC</span>
+    </header>
+    <main class="page">
+      <div class="page-head">
+        <div>
+          <div class="eyebrow">VIRTUAL OIL LAMP / ADMIN</div>
+          <h1>Network</h1>
+          <p>Check server availability, share the network address, and review connected devices.</p>
+        </div>
+      </div>
+      <div class="config-grid">
+        <section class="panel wide">
+          <h2>Server status</h2>
+          <div id="serverStatusText" class="server-status">Checking server…</div>
+        </section>
+        <section class="panel wide">
+          <h2>Server address</h2>
+          <p class="hint">
+            Use this address to open Virtual Oil Lamp on another device on the same network.
+          </p>
+          <div id="serverAddressList" class="server-address-list">
+            <code>Finding server address…</code>
+          </div>
+        </section>
+        <section class="panel wide" id="devicesPanel">
+          <div class="row">
+            <div>
+              <h2>Connected devices</h2>
+              <p class="hint">
+                See connected device names and IP addresses. Rename a device or terminate its active
+                access here. Page access is assigned to accounts above.
+              </p>
+            </div>
+            <button class="quiet" id="refreshDevices" type="button">Refresh</button>
+          </div>
+          <div id="deviceList" class="device-list">
+            <p class="hint">Loading connected devices…</p>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="site-credit">Created by Sadewmina Prabashwara · Dewlabs</footer>
+    <div class="toast" id="toast"></div>
+    <script src="brand.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

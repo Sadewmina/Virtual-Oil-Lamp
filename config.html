@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Sadewmina Prabashwara" />
+    <meta name="application-name" content="Virtual Oil Lamp" />
+    <meta name="version" content="1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Configuration — Virtual Oil Lamp v1.0 · Dewlabs</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="config-screen">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Virtual Oil Lamp by Dewlabs, version 1.0"
+        ><span class="brand-mark">✦</span
+        ><span class="brand-lockup"
+          ><strong>VIRTUAL OIL LAMP</strong><small>DEWLABS · v1.0</small></span
+        ></a
+      >
+      <nav>
+        <a href="live.html">Live Control</a><a href="config.html" class="active">Configuration</a
+        ><a href="connection.html">Connection</a><a href="network.html">Network</a
+        ><a href="lighting.html">Lighting</a><a href="display.html">Display</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
+        ◐ Dark</button
+      ><button class="theme-toggle" id="logout" type="button">Sign out</button
+      ><span class="live-tag"><i></i> LIVE SYNC</span>
+    </header>
+    <main class="page">
+      <div class="page-head">
+        <div>
+          <div class="eyebrow">EVENT SETUP / CONTROL PANEL</div>
+          <h1>Configuration</h1>
+          <p>Shape the ceremony and update the live pages.</p>
+        </div>
+        <button class="primary" id="save">Save configuration</button>
+      </div>
+      <div class="config-grid">
+        <section class="panel">
+          <h2>Event details</h2>
+          <label>Event title<input id="title" placeholder="The Lighting Ceremony" /></label
+          ><label
+            >Subtitle<input id="subtitle" placeholder="A moment of light, shared together" /></label
+          ><label>Number of lamps<input id="count" type="number" min="1" max="120" /></label
+          ><label
+            >Centre logo image URL<input
+              id="logo"
+              placeholder="https://… or /assets/logo.png" /></label
+          ><label
+            >Centre logo file<input
+              id="logoUpload"
+              type="file"
+              accept="image/png,image/jpeg,image/webp,image/gif,image/avif,image/svg+xml" /></label
+          ><img class="asset-preview" id="logoPreview" alt="Centre logo preview" hidden /><label
+            >Display logo size <span id="logoSizeValue" class="range-value">100%</span
+            ><input id="logoSize" type="range" min="25" max="500" step="5" /></label
+          ><label
+            >Lamp size <span id="lampSizeValue" class="range-value">100%</span
+            ><input id="lampSize" type="range" min="25" max="300" step="5" /></label
+          ><label
+            >Background image URL<input
+              id="background"
+              placeholder="https://… or /assets/event.jpg" /></label
+          ><label
+            >Background file<input
+              id="backgroundUpload"
+              type="file"
+              accept="image/png,image/jpeg,image/webp,image/gif,image/avif,image/svg+xml" /></label
+          ><img class="asset-preview" id="backgroundPreview" alt="Background preview" hidden />
+        </section>
+        <section class="panel">
+          <h2>Lamp orbit &amp; motion</h2>
+          <p class="hint">Set the lamps’ orbit and movement around the centre logo.</p>
+          <label class="check-label"
+            ><input id="animateLamps" type="checkbox" /><span
+              >Animate all lamps around the logo</span
+            ></label
+          ><label
+            >Full orbit time <span id="animationTimeValue" class="range-value">30s</span
+            ><input id="animationTime" type="range" min="2" max="300" step="1" /></label
+          ><label
+            >Orbit radius <span id="orbitRadiusValue" class="range-value">45%</span
+            ><input id="orbitRadius" type="range" min="10" max="49" step="1" /></label
+          ><button class="quiet" id="resetOrbitRadius" type="button">
+            Use default radius (45%)
+          </button>
+        </section>
+        <section class="panel">
+          <h2>Lamp artwork</h2>
+          <p class="hint">
+            Use transparent square artwork, such as 256 × 256 px. Matching scale keeps lit and unlit
+            lamps the same size.
+          </p>
+          <label class="check-label"
+            ><input id="matchLampArtwork" type="checkbox" checked /><span
+              >Use the same size for lit and unlit lamps</span
+            ></label
+          ><label id="commonArtworkScaleControl"
+            >Shared artwork size <span id="lampArtworkScaleValue" class="range-value">100%</span
+            ><input id="lampArtworkScale" type="range" min="50" max="300" step="5" /></label
+          ><label
+            >Unlit lamp image URL<input
+              id="unlitImage"
+              placeholder="https://… or /assets/lamp-unlit.png" /></label
+          ><label
+            >Unlit lamp file<input
+              id="unlitImageUpload"
+              type="file"
+              accept="image/png,image/jpeg,image/webp,image/gif,image/avif,image/svg+xml" /></label
+          ><img
+            class="asset-preview"
+            id="unlitImagePreview"
+            alt="Unlit lamp preview"
+            hidden
+          /><label id="unlitScaleControl"
+            >Unlit artwork scale <span id="unlitArtworkScaleValue" class="range-value">100%</span
+            ><input id="unlitArtworkScale" type="range" min="50" max="300" step="5" /></label
+          ><label
+            >Lit lamp image URL<input
+              id="litImage"
+              placeholder="https://… or /assets/lamp-lit.png" /></label
+          ><label
+            >Lit lamp file<input
+              id="litImageUpload"
+              type="file"
+              accept="image/png,image/jpeg,image/webp,image/gif,image/avif,image/svg+xml" /></label
+          ><img class="asset-preview" id="litImagePreview" alt="Lit lamp preview" hidden /><label
+            id="litScaleControl"
+            >Lit artwork scale <span id="litArtworkScaleValue" class="range-value">100%</span
+            ><input id="litArtworkScale" type="range" min="50" max="300" step="5" /></label
+          ><label
+            >Button appearance<select id="buttonMode">
+              <option value="logo_text">Logo and text</option>
+              <option value="text_only">Text only</option>
+              <option value="logo_only">Logo only</option>
+            </select></label
+          ><label>Lighting button label<input id="buttonLabel" placeholder="LIGHT A LAMP" /></label
+          ><label
+            >Button logo image URL<input
+              id="buttonImage"
+              placeholder="Optional PNG or SVG URL" /></label
+          ><label
+            >Lighting button logo file<input
+              id="buttonImageUpload"
+              type="file"
+              accept="image/png,image/jpeg,image/webp,image/gif,image/avif,image/svg+xml" /></label
+          ><img
+            class="asset-preview"
+            id="buttonImagePreview"
+            alt="Lighting button logo preview"
+            hidden
+          /><label
+            >Button logo size <span id="buttonLogoSizeValue" class="range-value">100%</span
+            ><input id="buttonLogoSize" type="range" min="25" max="500" step="5"
+          /></label>
+        </section>
+        <section class="panel wide">
+          <h2>Event color palette</h2>
+          <p class="hint">
+            Set colors to match your event. These update the pages and remain saved after a restart.
+          </p>
+          <div class="color-grid">
+            <label
+              >Site accent<input id="accentColor" type="color" value="#37d7c0" /><small
+                >Buttons and highlights</small
+              ></label
+            ><label
+              >Ceremony background<input id="eventBackground" type="color" value="#0b1118" /><small
+                >Lighting page background</small
+              ></label
+            ><label
+              >Lamp glow<input id="flameColor" type="color" value="#ffbd59" /><small
+                >Lamp flame and glow</small
+              ></label
+            >
+          </div>
+        </section>
+        <section class="panel wide">
+          <h2>Event title font</h2>
+          <p class="hint">
+            Use a Google Fonts family name. Each connected device loads the same font from Google
+            Fonts, so devices need internet access.
+          </p>
+          <label
+            >Google Font family<input
+              id="googleFontFamily"
+              list="googleFontChoices"
+              placeholder="Inter"
+              autocomplete="off" /><datalist id="googleFontChoices">
+              <option value="Inter"></option>
+              <option value="Roboto"></option>
+              <option value="Montserrat"></option>
+              <option value="Poppins"></option>
+              <option value="Lato"></option>
+              <option value="Playfair Display"></option>
+              <option value="Merriweather"></option>
+              <option value="Noto Sans Sinhala"></option>
+              <option value="Noto Serif Sinhala"></option>
+              <option value="Oswald"></option>
+              <option value="Nunito Sans"></option></datalist></label
+          ><small class="hint"
+            >Type any exact family name from Google Fonts.
+            <a href="https://fonts.google.com/" target="_blank" rel="noreferrer">Browse fonts</a
+            >.</small
+          >
+        </section>
+        <section class="panel wide">
+          <h2>Full screen display</h2>
+          <label class="check-label"
+            ><input id="hideFullscreenControls" type="checkbox" /><span
+              >Hide full-screen buttons while in full screen</span
+            ></label
+          >
+          <p class="hint">
+            When enabled, hide the exit controls on both the lighting and display pages. Use Escape
+            or your device’s full-screen gesture to exit.
+          </p>
+        </section>
+      </div>
+    </main>
+    <footer class="site-credit">Created by Sadewmina Prabashwara · Dewlabs</footer>
+    <div class="toast" id="toast"></div>
+    <script src="brand.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

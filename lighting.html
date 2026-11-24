@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Sadewmina Prabashwara" />
+    <meta name="application-name" content="Virtual Oil Lamp" />
+    <meta name="version" content="1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Virtual Oil Lamp v1.0 · Dewlabs — Light a Lamp</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="lighting-page">
+    <div class="event-bg"></div>
+    <button id="lightingLogout" class="display-logout" type="button" title="Sign out">↪</button
+    ><button
+      id="lightingFullscreen"
+      class="lighting-fullscreen"
+      type="button"
+      title="Enter full screen"
+    >
+      <span aria-hidden="true">⛶</span><span id="lightingFullscreenText">Full screen</span>
+    </button>
+    <main class="lighting-content">
+      <div class="eyebrow">A SHARED CEREMONY</div>
+      <h1 id="eventTitle">The Lighting Ceremony</h1>
+      <p id="eventSubtitle">A moment of light, shared together</p>
+      <div class="light-action">
+        <button id="lightButton" class="light-button">
+          <span id="buttonArt">✦</span><span id="buttonText">LIGHT A LAMP</span>
+        </button>
+      </div>
+      <div class="progress">
+        <span id="litProgress">0</span><span class="progress-divider">/</span
+        ><span id="totalProgress">0</span><span> lamps lit</span>
+      </div>
+      <div id="participantMessage" class="participant-message"></div>
+    </main>
+    <script src="brand.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
